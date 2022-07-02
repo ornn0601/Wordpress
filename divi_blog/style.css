@@ -37,7 +37,7 @@
   background-position: center;
   min-height: 10.8rem;
   padding: 1rem 1rem 12%;
-  margin: -15px -15px 10px -15px;
+  margin: -1rem -1rem 0.667rem -1rem;
   font-size: 2rem !important;
   line-height: 1.4;
   border-bottom: 1px solid #000000;
@@ -62,6 +62,14 @@
   line-height: 1.4;
 }
 
+/* 발췌문 길이 제한 */
+.o_blog_section .et_pb_post .post-content p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 
 @media all and (min-width: 1920px) {
