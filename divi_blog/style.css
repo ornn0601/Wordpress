@@ -1,14 +1,13 @@
+
+
 .et_pb_blog_grid .et_pb_salvattore_content {
   overflow: hidden;
 }
-
-/* 한 줄 갯수 설정 */
 .et_pb_blog_grid .et_pb_salvattore_content[data-columns]::before {
   content: '3 .column.size-1of3' !important;
   display: block !important;
 }
 
-/* 넓이, 간격 설정 */
 .et_pb_blog_grid .et_pb_salvattore_content[data-columns='3'] .column {
   margin-right: 1rem !important;
   width: calc(33.333% - 0.667rem) !important;
@@ -27,6 +26,9 @@
 /* 이미지 */
 .et_pb_blog_grid .et_pb_image_container {
   margin: -1rem -1rem;
+}
+.et_pb_post .et_pb_image_container .entry-featured-image-url {
+  margin-bottom: 1rem;
 }
 
 
@@ -50,7 +52,6 @@
   line-height: 1.3;
 }
 
-
 /* 메타 */
 .et_pb_post .post-meta, .et_pb_post .post-meta a, .et_pb_post p {
   color: black !important;
@@ -72,6 +73,7 @@
 }
 
 
+
 @media all and (min-width: 1920px) {
 
   .et_pb_blog_grid .et_pb_salvattore_content[data-columns]::before {
@@ -86,5 +88,20 @@
   .et_pb_blog_grid .et_pb_salvattore_content[data-columns='5'] .column:last-child {
     margin-right: 0 !important;
   }
+
+}
+
+@media all and (max-width: 767px) {
+
+  .et_pb_blog_grid .et_pb_salvattore_content[data-columns]::before {
+    content: '1 .column.size-1of1' !important;
+    display: block !important;
+  }
+  
+  .et_pb_blog_grid .et_pb_salvattore_content[data-columns='3'] .column {
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+
 
 }
