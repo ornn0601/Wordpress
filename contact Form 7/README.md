@@ -18,7 +18,8 @@ function randomSelected() {
 	let select = $('select[name=dropdown]');
 	let option = select.find('option');
 	let index = Math.floor(Math.random() * option.length);
-	option.eq(index).prop('selected', true); // 초기 선택을 랜덤으로 해준다.
+
+	option.eq(index).prop('selected', true); // 초기 선택을 랜덤으로 선택한다.
 	return false;
 }
 randomSelected();
