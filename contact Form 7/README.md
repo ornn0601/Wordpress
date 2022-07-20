@@ -27,26 +27,27 @@ randomSelected();
 
 ## 4. Random option
 ```js
+// Random option
 jQuery(document).ready(function() {
 
-	let dropdownSelect = $('select[name=o_dropdown-1]');
-	let dropdownOption = $('select[name=o_dropdown-1] option');
-	let dropdownOptionArr = dropdownOption.toArray();
+	let select = $('select[name=o_dropdown-1]');
+	let option = select.find('option');
 
-	// option 배열에서 "first_as_label인 선택해주세요" 삭제 후 배열 다시 만들기
-	let newOptionArr = dropdownOptionArr.slice(1);
+	// option 배열에서 "first_as_label인 선택해주세요" 삭제
+	let newOption = option.slice(1);
 
-	function selectOptionShuffle(array) {
-		let arr = array.sort(() => Math.random() - 0.5);
+	function selectOptionShuffle(elem) {
+		let index = elem.sort(() => Math.random() - 0.5);
+		select.append(index);
 
-		// html 삽입
-		for ( var i = 0; i < arr.length; i++ ) {
-			dropdownSelect.append(arr[i]);
+		for ( var i = 0; i < index.length; i++ ) {
+			select.append(index[i]);
 		}
 
 	}
-	selectOptionShuffle(newOptionArr);
 	
+	selectOptionShuffle(newOption);
+
 });
 ```  
 
