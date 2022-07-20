@@ -24,3 +24,26 @@ function randomSelected() {
 }
 randomSelected();
 ```
+
+## 4. Random option
+```js
+jQuery(document).ready(function() {
+
+	let dropdownSelect = $('select[name=o_dropdown-1]');
+	let dropdownOption = $('select[name=o_dropdown-1] option');
+	let dropdownOptionArr = dropdownOption.toArray();
+
+	// option 배열에서 "first_as_label인 선택해주세요" 삭제 후 배열 다시 만들기
+	let newOptionArr = dropdownOptionArr.slice(1);
+
+	function selectOptionShuffle(array) {
+		let arr = array.sort(() => Math.random() - 0.5);
+
+		// html 삽입
+		for ( var i = 0; i < arr.length; i++ ) {
+			dropdownSelect.append(arr[i]);
+		}
+
+	}
+	selectOptionShuffle(newOptionArr);
+	```
