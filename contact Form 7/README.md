@@ -33,19 +33,18 @@ jQuery(document).ready(function() {
 	let select = $('select[name=o_dropdown-1]');
 	let option = select.find('option');
 
-	// option 배열에서 "first_as_label인 선택해주세요" 삭제
+	// option항목에서 "first_as_label인 선택해주세요" 삭제
 	let newOption = option.slice(1);
 
 	function selectOptionShuffle(elem) {
-		let index = elem.sort(() => Math.random() - 0.5);
-		select.append(index);
+		let index = elem.sort(() => Math.random() - 0.5); // 랜덤 배치
 
+		// 랜덤 배치된 항목들 순서대로 입력
 		for ( var i = 0; i < index.length; i++ ) {
 			select.append(index[i]);
 		}
 
 	}
-	
 	selectOptionShuffle(newOption);
 
 });
